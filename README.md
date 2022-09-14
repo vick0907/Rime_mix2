@@ -1,56 +1,26 @@
-# 電腦 Rime 洋蔥方案（注音、雙拼、拼音、形碼、行列30）
-
-####  ※ 請勿使用於商業營利相關行為
-####  ※ Commercial use is prohibited
+# 小狼毫注音（洋蔥 mix-in 版）
 
 ## 內容說明：
-- allfiles 包含九個主方案（三個注音、一個注音雙拼、一個拼音、三個形碼、一個行列30）和一眾掛接方案
 
-- 三個形碼方案已刪除碼表內容，無法使用！
+- 由於日文、韓文、俄文、希臘文對我來說使用率太低，因此移除相關字典，減少連打誤判率。
 
-- 掛接方案包含：拉丁字母（含音標）、希臘字母、西里爾（俄）字母、全形數字字母、Easy 英文（含註釋字典）、日文（含漢字）、兩個韓文（HNC和形碼，含單音含漢字）、 注音文、Emoji 顏文字符號系列集等。
+## 使用方法：
 
-- 為易更新，不用同一檔案更新數次，allfiles 裡文件不以方案區分。
-
-- 提供 sort_rime_file.py，把所需 Rime 文件放到各個方案資料夾。
-
-## sort_rime_file.py 使用方法：
-- 本倉庫 Onion_Rime_Files 按右上綠色 〔↓Code〕 ⇨ Download ZIP ⇨ 解壓縮 ZIP 進入資料夾 ⇨ Python 執行 sort_rime_file.py ⇨ 產生『電腦RIME方案_{當天日期}』資料夾
-
-- 『電腦RIME方案_{當天日期}』，各個方案所需文件，分別放置於下層『方案名稱』資料夾。
-
-- 選取欲使用方案，內含文件通通放入『 Rime 』用戶設定資料夾，如已有 opencc 資料夾，移動 opencc 裡面檔案到 opencc 資料夾內，沒有則整個 opencc 移過去，「重新部署」方可。
-
-  > 《 Windows 用戶注意！》「注音（洋蔥 plus 版）」和「注音（洋蔥 mix‧in 版）」掛接《Easy》，用提示碼作英漢字典，Windows 整頁提示碼太多程式會崩潰！提供 custom 檔給 Windows 用戶，以正則簡化提示碼，防崩潰， Mac 用戶勿使用。
-
-  > 承上，分別於「`plus注音_防崩潰：Win必加，Mac勿加`」和「`mixin注音_同顯2修改檔(Win)`」資料夾內，把資料夾內 .custom.yaml 檔拖至上一層，與方案文件同一層，按「重新部署」方可。
-
-- 方案放置路徑：
-
-  > 別放錯資料夾，反饋有人放錯放到程式預設方案資料夾！雖可使用，但會產生 Bug。
+- 安裝小狼毫輸入法本體
+- 將Github內容覆蓋至以下路徑（Linux、Mac並無測試）
 
 ```
 %APPDATA%\Rime  ( Windows 小狼毫 )
-~/Library/Rime  ( Mac OS 鼠鬚管 )
-~/.config/ibus/rime  ( Linux 中州韻 )
-~/.config/fcitx/rime  ( Linux )
+
 ```
 
-- Linux 和 Win 系統注意：
+## 自行添加回日文與韓文說明：
 
-  > Linux 反饋問題很多，其 Rime 核心 librime 過舊，librime-lua 掛件缺失！不可能回退使功能打折去符合舊版核心寫法！方案皆以 Mac 鼠鬚管官方最新封裝版本為實作基礎。
-  
-  > 使用 Windows 小狼毫官方最新封裝版本，方案內有 rime.lua 該檔，建議更換最新官方封裝 [librime 核心](https://github.com/rime/librime/releases)！早期 librime-lua 版本使用遍尋候選項會產生記憶體洩漏，更新版已解決。
+- 待補上
 
-## Rime 入門需知：
 
-- [Wiki 說明連結](https://github.com/oniondelta/Onion_Rime_Files/wiki/Rime-%E5%85%A5%E9%96%80%E9%9C%80%E7%9F%A5)
 
-## Rime 方案安裝與修改：
-
-- [Wiki 說明連結](https://github.com/oniondelta/Onion_Rime_Files/wiki/%E6%B4%8B%E8%94%A5%E7%89%88%E9%9B%BB%E8%85%A6-Rime-%E6%96%B9%E6%A1%88%E5%AE%89%E8%A3%9D%E8%88%87%E4%BF%AE%E6%94%B9)
-
-## 各方案說明：
+## 以下為原作者其他方案說明：
 
   > 202203 韓文改成 HNC 羅馬字輸入方式。
 
