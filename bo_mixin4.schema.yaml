@@ -3,7 +3,7 @@
 # 《洋蔥注音 mix-in 2 full版 設定頁》
 schema:
   schema_id: bo_mixin4
-  name: "☆注音(洋蔥mix-in版 4 )☆〔全 ˊ ˇ ˋ ˙ 〕"
+  name: "☆注音(洋蔥mix-in版 4 )☆〔注音與英文〕"
   version: "202208"
   author:
     - 『洋蔥』
@@ -13,8 +13,8 @@ schema:
     拉丁 小寫 次尾綴為：「 / 」
     拉丁 大寫 次尾綴為：「 ; 」
     拉丁 組合字母 次尾綴為：「 ;; 」
-    平假名、小寫、韓語可省略不輸入次尾綴，直接打尾綴「空白鍵」（一聲）
-    除拉丁組合字母和韓語單音，皆可同時省略次尾綴和尾綴。
+    小寫、可省略不輸入次尾綴，直接打尾綴「空白鍵」（一聲）
+    除拉丁組合字母和單音，皆可同時省略次尾綴和尾綴。
 
   dependencies:
     - symbols_bpmf
@@ -22,8 +22,8 @@ schema:
     # - easy_en_b
     - easy_en_super
     - fullshape
-    - greek
-    - cyrillic
+    # - greek
+    # - cyrillic
     - allbpm
 
 switches:
@@ -90,8 +90,8 @@ engine:
     - affix_segmentor@emoji_series
     - affix_segmentor@easy_en
     - affix_segmentor@easy_en_script
-    - affix_segmentor@cyr2
-    - affix_segmentor@gr2
+    # - affix_segmentor@cyr2
+    # - affix_segmentor@gr2
     - affix_segmentor@fs2
     - affix_segmentor@all_bpm
     - affix_segmentor@reverse2_lookup
@@ -103,8 +103,8 @@ engine:
     - table_translator@emoji_series
     - table_translator@easy_en
     - script_translator@easy_en_script
-    - script_translator@cyr2
-    - script_translator@gr2
+    # - script_translator@cyr2
+    # - script_translator@gr2
     - script_translator@fs2
     - script_translator@all_bpm
     - script_translator@reverse2_lookup
@@ -384,44 +384,44 @@ e_reverse_lookup:
     - xform/@@/\n          /
     - xform/@/ /
 
-########################### 西里爾字母 ###################################
-cyr2:
-  tag: cyr2
-  dictionary: cyrillic.extended
-  enable_completion: false
-  enable_sentence: false
-  enable_user_dict: true
-  prefix: "6"
-  suffix: " "
-  tips: "《俄》▶"
-  closing_tips: "◀《俄》"
-  disable_user_dict_for_patterns:
-    - ^[a-z]{1}[;/]?$
-    - ^b[fir][;/]?$
-    - ^eb[;/]?$
-    - ^nu[;/]?$
-    - ^rk[;/]?$
-    - ^wy[;/]?$
-    - ^[a-z]+;;$
-  preedit_format:
-    - xform/^/《俄》/
-    - 'xform/\\/ /'
-############################# 希臘字母 #################################
-gr2:
-  tag: gr2
-  dictionary: greek.extended
-  enable_completion: false
-  enable_sentence: false
-  enable_user_dict: true
-  prefix: "7"
-  suffix: " "
-  tips: "《希》▶"
-  closing_tips: "◀《希》"
-  disable_user_dict_for_patterns:
-    - ^[a-z]{1}[;/]?$
-  preedit_format:
-    - xform/^/《希》/
-    - 'xform/\\/ /'
+########################## 西里爾字母 ###################################
+# cyr2:
+  # tag: cyr2
+  # dictionary: cyrillic.extended
+  # enable_completion: false
+  # enable_sentence: false
+  # enable_user_dict: true
+  # prefix: "6"
+  # suffix: " "
+  # tips: "《俄》▶"
+  # closing_tips: "◀《俄》"
+  # disable_user_dict_for_patterns:
+    # - ^[a-z]{1}[;/]?$
+    # - ^b[fir][;/]?$
+    # - ^eb[;/]?$
+    # - ^nu[;/]?$
+    # - ^rk[;/]?$
+    # - ^wy[;/]?$
+    # - ^[a-z]+;;$
+  # preedit_format:
+    # - xform/^/《俄》/
+    # - 'xform/\\/ /'
+############################ 希臘字母 #################################
+# gr2:
+  # tag: gr2
+  # dictionary: greek.extended
+  # enable_completion: false
+  # enable_sentence: false
+  # enable_user_dict: true
+  # prefix: "7"
+  # suffix: " "
+  # tips: "《希》▶"
+  # closing_tips: "◀《希》"
+  # disable_user_dict_for_patterns:
+    # - ^[a-z]{1}[;/]?$
+  # preedit_format:
+    # - xform/^/《希》/
+    # - 'xform/\\/ /'
 ################################### 全形 ######################################
 fs2:
   tag: fs2
