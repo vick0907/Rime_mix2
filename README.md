@@ -27,7 +27,7 @@ bo_mixin.extended.dict.yaml
 - bo_mixin.extended.dict.yaml
 - 將以下jp片語字典檔加回即可，並註解掉kr相關字眼。
 
-```
+```yaml
 import_tables:
   - terra_pinyin_onion
   - terra_pinyin_onion_add
@@ -51,10 +51,11 @@ import_tables:
   - phrases.la_eu_w
 ```
 
+
 - bo_mixin4.schema.yaml
 - 異動掉greek（希臘文）與cyrillic（俄文），並確認jpnin1（日文）沒有被註解掉
 
-```
+```yaml
 import_tables:
   dependencies:
     - symbols_bpmf
