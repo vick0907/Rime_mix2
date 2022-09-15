@@ -2,7 +2,7 @@
 
 ## 內容說明：
 
-- 由於日文、韓文、俄文、希臘文對我來說使用率太低，因此移除相關字典，減少連打誤判率。
+- 由於日文、韓文、俄文、希臘文使用率太低，因此移除相關字典，減少連打誤判率。
 
 ## 使用方法：
 
@@ -16,7 +16,57 @@
 
 ## 自行添加回日文與韓文說明：
 
-- 待補上
+- 若需要自行添加或減少語言，需要異動以下設定檔
+```
+bo_mixin4.schema.yaml
+bo_mixin.extended.dict.yaml
+```
+
+## 示範，自行添加回日文，移除韓文與其他語言：
+
+- bo_mixin.extended.dict.yaml
+- 將以下jp片語字典檔加回即可，並註解掉kr相關字眼。
+
+```
+import_tables:
+  - terra_pinyin_onion
+  - terra_pinyin_onion_add
+  - bo_mixin_jp
+  # - bo_mixin_kr  #《韓文洋蔥形碼》  #此項打開時，bo_mixin_kr_hnc 請關閉。
+  # - bo_mixin_kr_hnc  #《韓文HNC羅馬字》  #此項打開時，bo_mixin_kr 請關閉。
+  - bo_mixin_la
+  # - bo_mixin_en  #《英文26字母和符號》  #此項打開時，bo_mixin_la 和 phrases.la_py_w 請關閉。
+  - phrases.cht_en_w
+  - phrases.chtp
+  # - phrases.cht  #《未標注拼音之中文詞庫》  #不建議打開。
+  # - phrases.jp_hk_more  #《日語大詞庫》  #欲更精準 mapping，可打開並關閉小詞庫 phrases.jp_hk。
+  - phrases.jp_hk
+  - phrases.jp_hkkreduce
+  # - phrases.kr_more  #《韓語大詞庫》  #欲更精準 mapping，可打開並關閉小詞庫 phrases.kr。
+  # - hrases.kr
+  - phrases.en_o_w
+  - phrases.la_py_w
+  - phrases.en_l_w
+  - phrases.en_u_w
+  - phrases.la_eu_w
+```
+
+- bo_mixin4.schema.yaml
+- 異動掉greek（希臘文）與cyrillic（俄文），並確認jpnin1（日文）沒有被註解掉
+
+```
+import_tables:
+  dependencies:
+    - symbols_bpmf
+    - cangjie5
+    # - easy_en_b
+    - easy_en_super
+    - fullshape
+    # - greek
+    # - cyrillic
+    - allbpm
+    - jpnin1
+```
 
 
 
