@@ -143,7 +143,7 @@ segmentors:
 ```
 
 - 移除資料夾多餘檔案，可移除kr、cyrillic、cyr、gr、greek相關字眼檔案。 
-- 再把資料夾內容mixin注音_同顯1修改檔(Win)直接丟進去即可；差別只有顯示方式不同，可見[原作者的文章](https://deltazone.pixnet.net/blog/post/347368709)中的同顯說明段落
+- 再把資料夾內容mixin注音_同顯1修改檔(Win)或者同顯2直接丟進去即可；差別只有顯示方式不同，可見[原作者的文章](https://deltazone.pixnet.net/blog/post/347368709)中的同顯說明段落
 - 重新部署
 - 若無反應，可先將資料夾build移除，並將小狼毫輸入法退出，重新執行。 
 
