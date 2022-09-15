@@ -11,16 +11,18 @@
 
 ```
 %APPDATA%\Rime  ( Windows 小狼毫 )
-
 ```
 
 ## 自行添加回日文與韓文說明：
 
 - 若需要自行添加或減少語言，需要異動以下設定檔
-```
-bo_mixin4.schema.yaml
-bo_mixin.extended.dict.yaml
-```
+- 建議從作者載點下載原檔案進行修改，由於此份已經變成只保留注音跟英文的形狀，已經移除不少區塊了。
+
+| 物件 | 敘述 |
+| --- | --- |
+| bo_mixin4.schema.yaml | 設定檔案 |
+| bo_mixin.extended.dict.yaml | 擴充字典檔設定 |
+
 
 ## 示範，自行添加回日文，移除韓文與其他語言：
 
@@ -67,6 +69,56 @@ import_tables:
     # - cyrillic
     - allbpm
     - jpnin1
+```
+
+- 異動掉gr2（希臘文）與cyr2（俄文），並確認japan（日文）沒有被註解掉
+
+```yaml
+segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - affix_segmentor@emoji_series
+    - affix_segmentor@easy_en
+    - affix_segmentor@easy_en_script
+    - affix_segmentor@japan
+    # - affix_segmentor@cyr2
+    # - affix_segmentor@gr2
+    - affix_segmentor@fs2
+    - affix_segmentor@all_bpm
+    - affix_segmentor@reverse2_lookup
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator@bo_mixin_phrase
+    - table_translator@emoji_series
+    - table_translator@easy_en
+    - script_translator@easy_en_script
+    - script_translator@japan
+    # - script_translator@cyr2
+    # - script_translator@gr2
+    - script_translator@fs2
+    - script_translator@all_bpm
+    - script_translator@reverse2_lookup
+    - lua_translator@t2_translator
+    - lua_translator@email_url_translator
+    - lua_translator@instruction_grave_bpmf
+    - script_translator
+```
+
+- 移除掉speller區塊中的韓文拼寫，譬如移除以下項目
+
+```ymal
+##### 韓文HNC轉寫開始 #####
+    - derive/^(!)l/$1r/
+    - derive/^(![^!]+)l/$1r/
+    - derive/^(!)x/$1ng/
+    - derive/^(![^!]+)x/$1ng/
+    - derive/^(![^!]*)i/$1y/
+    - derive/^(![^!]*)y([aueo])/$1i$2/
+    - derive/^(!)p/$1f/
+    - derive/^(![^!]+)p$/$1f/
 ```
 
 
