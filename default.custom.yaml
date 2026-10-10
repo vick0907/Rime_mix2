@@ -6,22 +6,7 @@
 
 patch:
   schema_list:
-######## 洋蔥注音 mix‧in 版 ########
-    - schema: bo_mixin1
-    - schema: bo_mixin2
-    - schema: bo_mixin3
-    - schema: bo_mixin4
-    - schema: jpnin1
-    - schema: greek
-    - schema: cyrillic
-    - schema: allbpm
-    - schema: fullshape
-#     - schema: easy_en_b
-#     - schema: easy_en_comment
-    - schema: easy_en_super
-    - schema: symbols_bpmf
-    - schema: cangjie5
-#################################
+    - schema: new_bopomofo
 
   switcher/fix_schema_list_order: true #固定方案選單順序
   switcher/hotkeys:

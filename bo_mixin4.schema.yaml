@@ -19,11 +19,8 @@ schema:
   dependencies:
     - symbols_bpmf
     - cangjie5
-    # - easy_en_b
     - easy_en_super
     - fullshape
-    # - greek
-    # - cyrillic
     - allbpm
 
 switches:
@@ -59,9 +56,6 @@ engine:
   filters:
     - simplifier@zh_tw
     - lua_filter@mix_cf2_miss_filter  #合併 charset_filter2 和 missing_mark_filter，兩個 lua filter 太耗效能。
-    # - lua_filter@charset_filter2  #去除opencc轉換後留下的「᰼᰼」。
-    # - lua_filter@charset_filter  #打開後中文只保留CJK（精簡），但外語不受影響。
-    # - lua_filter@missing_mark_filter  #補上標點符號因直上和 opencc 衝突沒附註之選項
     - lua_filter@en_sort_filter
     - simplifier@emoji_switch
     - simplifier
@@ -72,8 +66,6 @@ engine:
     - uniquifier
   processors:
     - lua_processor@mix_apc_s2rm  #合併 ascii_punct_change 和 s2r_most，增進效能。
-    # - lua_processor@ascii_punct_change
-    # - lua_processor@s2r_most
     - ascii_composer
     - recognizer
     - key_binder
@@ -90,8 +82,6 @@ engine:
     - affix_segmentor@emoji_series
     - affix_segmentor@easy_en
     - affix_segmentor@easy_en_script
-    # - affix_segmentor@cyr2
-    # - affix_segmentor@gr2
     - affix_segmentor@fs2
     - affix_segmentor@all_bpm
     - affix_segmentor@reverse2_lookup
@@ -103,8 +93,6 @@ engine:
     - table_translator@emoji_series
     - table_translator@easy_en
     - script_translator@easy_en_script
-    # - script_translator@cyr2
-    # - script_translator@gr2
     - script_translator@fs2
     - script_translator@all_bpm
     - script_translator@reverse2_lookup
@@ -384,44 +372,6 @@ e_reverse_lookup:
     - xform/@@/\n          /
     - xform/@/ /
 
-########################## 西里爾字母 ###################################
-# cyr2:
-  # tag: cyr2
-  # dictionary: cyrillic.extended
-  # enable_completion: false
-  # enable_sentence: false
-  # enable_user_dict: true
-  # prefix: "6"
-  # suffix: " "
-  # tips: "《俄》▶"
-  # closing_tips: "◀《俄》"
-  # disable_user_dict_for_patterns:
-    # - ^[a-z]{1}[;/]?$
-    # - ^b[fir][;/]?$
-    # - ^eb[;/]?$
-    # - ^nu[;/]?$
-    # - ^rk[;/]?$
-    # - ^wy[;/]?$
-    # - ^[a-z]+;;$
-  # preedit_format:
-    # - xform/^/《俄》/
-    # - 'xform/\\/ /'
-############################ 希臘字母 #################################
-# gr2:
-  # tag: gr2
-  # dictionary: greek.extended
-  # enable_completion: false
-  # enable_sentence: false
-  # enable_user_dict: true
-  # prefix: "7"
-  # suffix: " "
-  # tips: "《希》▶"
-  # closing_tips: "◀《希》"
-  # disable_user_dict_for_patterns:
-    # - ^[a-z]{1}[;/]?$
-  # preedit_format:
-    # - xform/^/《希》/
-    # - 'xform/\\/ /'
 ################################### 全形 ######################################
 fs2:
   tag: fs2
