@@ -5,7 +5,8 @@ __include: bo_mixin4.schema:/
 __patch:
   schema/schema_id: new_bopomofo
   schema/name: "\u65b0\u6ce8\u97f3"
-  schema/version: "20261011.1"
+  schema/version: "20261011.4"
   schema/dependencies/@next: luna_quanpin
   translator/prism: new_bopomofo
-  "engine/processors/@before 0": lua_processor@*new_bopomofo
+  "engine/processors/@before 0": lua_processor@*new_bopomofo*processor
+  engine/filters/@next: lua_filter@*new_bopomofo*filter
